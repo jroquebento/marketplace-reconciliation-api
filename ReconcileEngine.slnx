@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/ReconcileEngine.Api/ReconcileEngine.Api.csproj" Id="a6b28582-42fb-4d55-9abc-cd55884c2d32" />
+  <Project Path="tests/ReconcileEngine.Tests/ReconcileEngine.Tests.csproj" Id="096d2771-ad7f-4d67-bf8c-85a1481a1088" />
+</Solution>
