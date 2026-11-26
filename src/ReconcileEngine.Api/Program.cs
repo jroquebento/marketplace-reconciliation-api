@@ -1,16 +1,13 @@
+using ReconcileEngine.Api.Infrastructure.Data;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-if (string.IsNullOrWhiteSpace(connectionString))
-{
-    throw new InvalidOperationException("Connection string 'DefaultConnection' não foi configurada.");
-}
-
 builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
+
+builder.Services.AddSingleton<IDbConnectionFactory, NpgsqlConnectionFactory>();
 
 var app = builder.Build();
 
