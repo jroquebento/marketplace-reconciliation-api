@@ -8,6 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddSingleton<IDbConnectionFactory, NpgsqlConnectionFactory>();
+DapperConfiguration.Configure();
 
 var app = builder.Build();
 
