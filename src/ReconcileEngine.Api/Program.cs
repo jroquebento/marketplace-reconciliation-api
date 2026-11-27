@@ -1,5 +1,6 @@
 using ReconcileEngine.Api.Infrastructure.Data;
 using ReconcileEngine.Api.Infrastructure.Repositories;
+using ReconcileEngine.Api.Services;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddSingleton<IDbConnectionFactory, NpgsqlConnectionFactory>();
 builder.Services.AddScoped<IReconciliationRepository, ReconciliationRepository>();
+builder.Services.AddScoped<IReconciliationService, ReconciliationService>();  
 DapperConfiguration.Configure();
 
 var app = builder.Build();
